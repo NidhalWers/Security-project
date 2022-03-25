@@ -3,7 +3,7 @@
     $host = "localhost";
     $user_mysql = "root";    // nom de l'utilisateur MySQL 
     $password_mysql = "";    // mot de passe de l'utilisateur MySQL
-    $database = "zds_injections_sql";
+    $database = "securite";
 
     $db = mysqli_connect($host, $user_mysql, $password_mysql, $database);
 
