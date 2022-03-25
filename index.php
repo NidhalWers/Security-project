@@ -6,7 +6,7 @@
     $database = "securite";
 
     $db = mysqli_connect($host, $user_mysql, $password_mysql, $database);
-
+    
     if(!$db)
     {
         echo "Echec de la connexion\n";
@@ -14,6 +14,7 @@
     }
 
     mysqli_set_charset($db, "utf8");
+ 
 ?>
 
 <!DOCTYPE>
@@ -36,14 +37,15 @@
             $username = $_GET['username'];
             $password = $_GET['password'];
 
-            $query = "SELECT id, username FROM users WHERE username = '".$username."' AND password = '".$password."'";
+            #$query = "SELECT id, username FROM users WHERE username = '".$username."' AND password = '".$password."'";
+            $query = "SELECT * FROM `users` WHERE username = '".$username."' AND password = '".$password."' ";
             $rs = mysqli_query($db, $query);
-
+           
             if(mysqli_num_rows($rs) == 1)
             {
                 $user = mysqli_fetch_assoc($rs);
 
-                echo "Bienvenue ".htmlspecialchars($user['username']);
+                echo "Bienvenue ".htmlspecialchars($_GET['username']);
             }
             else
             {
@@ -62,3 +64,8 @@
         </form>
     </body>
 </html>
+
+
+
+
+
