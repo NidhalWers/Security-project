@@ -55,7 +55,7 @@
         }
         ?>
 
-        <form action="connexion.php" method="GET">
+        <form action="index.php" method="GET">
             <b>Nom d'utilisateur :</b> <input type="text" name="username"/>
             <b>Mot de passe :</b> <input type="text" name="password" />
             <input type="submit" value="Connexion" />
